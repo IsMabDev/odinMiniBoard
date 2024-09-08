@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= Title %>
+  </title>
+
+</head>
+
+<body>
+  <h1>
+    <% Title%>
+  </h1>
+  <ul>
+    <% messages.forEach((message,index)=> {%>
+      <li>
+        <h2> This is a message from <%= message.user%>
+        </h2>
+        <form action="/index/<%=index%>" method="post">
+          <button type="submit">Get details</button>
+        </form>
+        <h3> he says: <%= message.text%>
+        </h3>
+        <h4>sent on:<%= message.added%>
+        </h4>
+      </li>
+      <%})%>
+
+  </ul>
+  <a href="/new">
+    <button type="submit">Add a New Message</button>
+  </a>
+</body>
+
+</html>
